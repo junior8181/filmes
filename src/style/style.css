@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    padding: 5vh 5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 98;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    gap: 7px;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+.content-header a {
+    text-decoration: none;
+    color: white
+}
+
+
+/* Main */
+
+main {
+   width: 100%;
+}
+
+.carousel {
+    height: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-carousel {
+    width: 400%;
+    display: flex;
+    transition: 0.8s;
+}
+
+.card-carousel {
+    width: 25%;
+}
+
+.card-carousel img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
