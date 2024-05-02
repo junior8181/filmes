@@ -5,14 +5,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body {
     height: 100vh;
+    background-color: black;
 }
 
 header {
-    padding: 5vh 5vh;
+    padding: 2vh 5vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,9 +28,10 @@ header {
     justify-content: space-between;
 }
 
+
 nav ul {
     display: flex;
-    gap: 7px;
+    gap: 12px;
 
 }
 
@@ -38,7 +41,8 @@ li {
 
 .content-header a {
     text-decoration: none;
-    color: white
+    color: white;
+    font-weight: bold;
 }
 
 
@@ -50,8 +54,10 @@ main {
 
 .carousel {
     height: 800px;
+   
     width: 100%;
     overflow: hidden;
+    border: 1px solid green;
 }
 
 .container-carousel {
@@ -62,11 +68,94 @@ main {
 
 .card-carousel {
     width: 25%;
+    position: relative;
+}
+
+.details {
+    color: beige;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details h2 {
+    margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.493);
+    padding: 10px;
+    border-radius: 4px;
+    
+}
+
+.other-details {
+    margin-top: 17px;
 }
 
 .card-carousel img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    aspect-ratio: 1;
+    object-fit: contain;
+    filter: blur(15px);
+    perspective: 1000px;
+    transition: 0.8s;
+
+}
+.card-carousel img.destaque {
+    opacity: 0.5;
+    transform: rotate(360deg);
+    transition: 1s;
+    filter: blur(0);
+}
+
+
+/* section grid de filmes */
+
+.grid-filmes {
+    margin-top: 15px;
+    padding: 0 5vh;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    row-gap: 25px;
+}
+
+.card-filme {
+    background-image: url("https://upload.wikimedia.org/wikipedia/pt/thumb/6/69/The_Avengers_Cartaz.jpg/250px-The_Avengers_Cartaz.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid white;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .details h2 {
+        font-size: 1rem;
+    }
+
+    .grid-filmes {
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 9px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .carousel {
+        height: 540px;
+    } 
+    .grid-filmes {
+        column-gap: 9px;
+    }
 }
