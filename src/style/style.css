@@ -14,7 +14,6 @@ body {
 }
 
 header {
-    padding: 2vh 5vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,12 +23,24 @@ header {
 }
 
 .content-header {
+    padding: 2vh 5vh;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+.bi-list {
+    display: none;
+    cursor: pointer;
+}
 
-nav ul {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content-header nav ul {
     display: flex;
     gap: 12px;
 
@@ -43,6 +54,12 @@ li {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: .3s;
+}
+
+.content-header a:hover {
+    background-color: black;
+    padding: 9px 3px;
 }
 
 
@@ -57,7 +74,6 @@ main {
    
     width: 100%;
     overflow: hidden;
-    border: 1px solid green;
 }
 
 .container-carousel {
@@ -69,6 +85,10 @@ main {
 .card-carousel {
     width: 25%;
     position: relative;
+}
+
+.content-icons .bi-search {
+    cursor: pointer;
 }
 
 .details {
@@ -132,6 +152,62 @@ main {
     border: 1px solid white;
 }
 
+
+/* Barra de pesquisa expandida */
+
+.search-expandir {
+    background-color: rgba(0, 0, 0, 0.438);
+    z-index: 100;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.expandir {
+    height: 100vh;
+}
+
+.container-search {
+    width: 100%;
+    background-color: black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra-search {
+    background-color: white;
+    width: 60%;
+    padding: 1% 3%;
+    display: flex;
+    border-radius: 8px;
+}
+
+.bi-x {
+    color: white;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#search {
+    border: none;
+    outline: none;
+    color: black;
+    width: 90%;
+}
+
+.barra-search .bi-search {
+    color: black;
+}
+
+
+
+
 @media screen and (max-width: 768px) {
     nav {
         display: none;
@@ -149,6 +225,40 @@ main {
         grid-template-columns: repeat(3,1fr);
         column-gap: 9px;
     }
+
+    .bi-list{
+        display: block;
+    }
+
+
+    /* menu hamburguinho */
+    .container-menu {
+        height: 100vh;
+        width: 50vw;
+        background-color: black;
+    }
+
+    .container-menu menu {
+        padding: 5%;
+    }
+    
+    .container-menu menu li {
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    .signup {
+        padding: 5%;
+        background-color: yellow;
+        color: black;
+    }
+
+    .container-menu menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
