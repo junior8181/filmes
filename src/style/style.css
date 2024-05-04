@@ -149,7 +149,26 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: 1px solid white;
+    cursor: pointer;
+    transition: .5s;
+    position: relative;
+}
+
+.card-filme:hover::before {
+    content: "Assistir";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.795);
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-filme:hover {
+    opacity: .6;
 }
 
 
@@ -205,6 +224,11 @@ main {
     color: black;
 }
 
+.container-menu {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
 
 
 
@@ -233,11 +257,17 @@ main {
 
     /* menu hamburguinho */
     .container-menu {
-        height: 100vh;
-        width: 50vw;
+        height: 0vh;
+        width: 0vw;
         background-color: black;
+        overflow: hidden;
+        transition: .2s;
     }
 
+    .expandir-menu {
+        height: 100vh;
+        width: 50vw;
+    }
     .container-menu menu {
         padding: 5%;
     }
@@ -251,8 +281,15 @@ main {
         padding: 5%;
         background-color: yellow;
         color: black;
+        display: flex;
+        justify-content: space-between;
     }
-
+    .signup span, .signup .bi-person, .signup .bi-caret-right-fill{
+        color: black;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
     .container-menu menu a {
         color: white;
         text-decoration: none;

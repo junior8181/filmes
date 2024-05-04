@@ -6,6 +6,8 @@ let total = imgs.length-1
 
 let search = document.querySelector(".search-expandir")
 
+let menu = document.querySelector(".container-menu")
+
 // Funções
 function animaCarousel() {
     setInterval(() => {
@@ -29,7 +31,27 @@ document.querySelector(".content-icons .bi-search").addEventListener("click", ()
 })
 
 search.addEventListener("click", (event) => {
-    if(event.target.classList[1] === "bi-x") {
+    if(event.target.classList.contains("bi-x")) {
         search.classList.remove("expandir")
     }
+})
+
+
+// evento de menu
+
+document.querySelector(".container-menu").addEventListener("click", (event) => {
+   let evento = event.currentTarget
+   if(evento.classList.contains("container-menu")) {
+    return
+   } else {
+    evento.classList.remove("expandir-menu")
+   }
+})
+
+document.querySelector("#fechar").addEventListener("click", () => {
+    menu.classList.remove("expandir-menu")
+})
+
+document.querySelector(".bi-list").addEventListener("click", () => {
+    menu.classList.add("expandir-menu")
 })
