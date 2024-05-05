@@ -24,7 +24,7 @@ function animaCarousel() {
 }
 
 // Eventos
-window.addEventListener('load', animaCarousel)
+//window.addEventListener('load', animaCarousel)
 
 document.querySelector(".content-icons .bi-search").addEventListener("click", () => {
     document.querySelector(".search-expandir").classList.add("expandir")
