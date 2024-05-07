@@ -62,7 +62,10 @@ li {
     padding: 9px 3px;
 }
 
-
+.content-icons .bi-search, .content-icons .bi-person {
+    font-size: 1.4rem;
+    margin-left: 6px;
+}
 /* Main */
 
 main {

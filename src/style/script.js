@@ -8,6 +8,10 @@ let search = document.querySelector(".search-expandir")
 
 let menu = document.querySelector(".container-menu")
 
+let cards = document.querySelectorAll(".card-carousel")
+
+let login = document.querySelector("#person-login")
+
 // Funções
 function animaCarousel() {
     setInterval(() => {
@@ -23,8 +27,17 @@ function animaCarousel() {
     }, 3000)
 }
 
+async function request() {
+    let link = "https://api.themoviedb.org/3/search/movie?query=Batman&callback=test"
+    let response = await fetch(link)
+
+    let json = await response.json()
+
+}
+
 // Eventos
-//window.addEventListener('load', animaCarousel)
+window.addEventListener('load', animaCarousel)
+
 
 document.querySelector(".content-icons .bi-search").addEventListener("click", () => {
     document.querySelector(".search-expandir").classList.add("expandir")
@@ -55,3 +68,7 @@ document.querySelector("#fechar").addEventListener("click", () => {
 document.querySelector(".bi-list").addEventListener("click", () => {
     menu.classList.add("expandir-menu")
 })
+
+
+// ADICIONANDO API
+
