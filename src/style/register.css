@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 * {
-    max-resolution: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -27,4 +27,85 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+form {
+    width: 50%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 70px 0;
+}
+
+form div {
+    height: 45px;
+    border-radius: 6px;
+    position: relative;
+}
+
+form input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.cont-name.error::after {
+    content: "Escreva seu nome!";
+    color: red;
+    top: 30%;
+    left: 0;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.cont-nasc.error::after {
+    content: "Voce não tem idade suficiente para criar uma conta!";
+    color: red;
+}
+
+.cont-sobrenome.error::after {
+    content: "Escreva seu sobrenome!";
+    color: red;
+}
+
+.cont-password.error::after, .cont-password-two.error::after {
+    content: "As senhas não correspondem!";
+    color: red;
+}
+
+.cont-email.error::after {
+    content: "E-mail invalido!";
+    color: red;
+}
+
+#btn-register {
+    height: 45px;
+    border-radius: 10px;
+    background-color: chocolate;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    margin-top: 20px;
+}
+
+#btn-register:active {
+    background-color: white;
+    color: chocolate;
+}
+
+.bi-eye-fill {
+    color: black;
+    position: absolute;
+    top: 30%;
+    right: 4%;
+    cursor: pointer;
 }
