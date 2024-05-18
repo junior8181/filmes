@@ -16,6 +16,7 @@ form {
     max-width: 550px;
     border: 1px solid rgb(34, 32, 32);
     padding: 100px 0;
+    box-shadow: 0 0 10px rgb(27, 26, 25);
 }
 
 .register {

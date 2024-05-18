@@ -3,6 +3,9 @@ let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 
 
+
+
 form.addEventListener("submit", (event) => {
     event.preventDefault()
 })
+

@@ -88,6 +88,7 @@ main {
 .card-carousel {
     width: 25%;
     position: relative;
+    cursor: pointer;
 }
 
 
@@ -122,24 +123,48 @@ main {
     background-color: rgba(0, 0, 0, 0.493);
     padding: 10px;
     border-radius: 4px;
-    
+    text-align: center;
+    text-shadow: 2px 4px 2px black;
+    transform: translateY(-500%);
+    transition: 1.3s;
+}
+
+.popularity {
+    background-color: rgb(122, 115, 115);
+    padding: 10px;
+    border-radius: 20px;
+    transform: translateY(800%);
+    transition: 1.3s;
+}
+
+.destaque .popularity {
+    transform: translateY(0);
+}
+
+.destaque .details h2 {
+    transform: translateY(0%);
 }
 
 .other-details {
     margin-top: 17px;
+    display: none;
 }
 
 .card-carousel img {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    /*filter: blur(15px);*/
+    
     perspective: 1000px;
     transition: 0.8s;
 
 }
-.card-carousel img.destaque {
+
+.card-carousel.destaque img {
     opacity: 0.5;
+}
+
+.card-carousel.destaque {
     transform: rotate(360deg);
     transition: 1s;
     filter: blur(0);
@@ -169,7 +194,7 @@ main {
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    width: 170%;
+    width: 180%;
     max-width: 1900px;
 }
 
@@ -179,10 +204,11 @@ main {
     width: 25%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     cursor: pointer;
     transition: .5s;
     position: relative;
+    cursor: pointer;
 }
 
 .card-filme:hover::before {
@@ -210,12 +236,14 @@ main {
     z-index: 100;
     position: relative;
     height: 0;
-    overflow: hidden;
+    overflow: auto;
     transition: .5s;
 }
 
 .expandir {
     height: 100vh;
+    position: fixed;
+    width: 100%;
 }
 
 .container-search {
@@ -225,6 +253,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+
+,.search-expandir.expandir .container-search {
+    position: fixed;
 }
 
 .barra-search {
@@ -261,6 +294,52 @@ main {
     overflow: hidden;
 }
 
+   /* resultados */
+.hidden {
+    display: none;
+}
+
+.container-results {
+    width: 80%;
+    max-width: 700px;
+   /* margin: 200px auto 0 auto; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.result {
+    display: none;
+    gap: 15px;
+    border: 1px solid rgba(133, 106, 106, 0.507);
+    background-color: rgba(66, 54, 54, 0.199);
+    cursor: pointer;
+    transition: .7s;
+}
+.result:hover {
+    padding: 3%;
+    background-color: black;
+    box-shadow: 3px 3px 3px 3px red;
+}
+
+.container-results img {
+    height: 200px;
+    width: 320px;
+}
+.details-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.title {
+    
+}
+
+
+
+/* Footer */
+
 footer {
     margin: 4vh 5vw;
     display: flex;
@@ -290,7 +369,9 @@ footer span {
     .bi-list{
         display: block;
     }
-
+    .card-filme {
+        height: 130px;
+    }
 
     /* menu hamburguinho */
     .container-menu {

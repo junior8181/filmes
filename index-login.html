@@ -6,6 +6,10 @@
     <title>Login</title>
     <link rel="stylesheet" href="src/style/style.css">
     <link rel="stylesheet" href="src/style/login.css">
+
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
 </head>
 <body>
     <header>
@@ -30,15 +34,54 @@
             <div class="btns">
                 <button id="btn-enviar">Entrar</button>
                 <span>ou</span>
-                <span>Entrar com <a href="#">Google</a></span>
+                <span>Entrar com <a href="#" id="google-register">Google</a></span>
             </div>
 
         </form>
 
         <div class="register">
-            <span>Ainda não tem uma conta? <a href="#">Clique aqui</a></span>
+            <span>Ainda não tem uma conta? <a href="register.html" target="_self" id="page-register">Clique aqui</a></span>
         </div>
     </main>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC9kQAv3GaDE_EWN5hMTA49a68PUaLFTk8",
+          authDomain: "projeto-teste-bf93b.firebaseapp.com",
+          projectId: "projeto-teste-bf93b",
+          storageBucket: "projeto-teste-bf93b.appspot.com",
+          messagingSenderId: "334949224945",
+          appId: "1:334949224945:web:a701e8fd267b6da93ff450"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth()
+
+        const provider = new firebase.auth.GoogleAuthProvider()
+
+        
+       
+        document.querySelector("#google-register").addEventListener("click", () => {
+            auth.signInWithPopup(provider)
+        })
+
+        auth.onAuthStateChanged((val) => {
+           if(val) {
+              //alert("logado com sucesso "+val.displayName)
+              
+              //window.location.href = "index.html"
+           }
+        })
+        
+       
+    </script>
     <script src="src/style/script-login.js"></script>
 </body>
 </html>

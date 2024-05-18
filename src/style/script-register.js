@@ -11,7 +11,7 @@ document.querySelectorAll(".bi-eye-fill").forEach((item, i) => {
     item.addEventListener("click", (event) => {
         if(passwords[i].getAttribute("type") === "password") {
            passwords[i].setAttribute("type", "text")
-           icons[i].classList.replace("bi-eye-fill", "bi-slash-fill")
+           icons[i].classList.replace("bi-eye-fill", "bi-eye-slash-fill")
         } else {
             passwords[i].setAttribute("type", "password")
             icons[i].classList.replace("bi-eye-slash-fill", "bi-eye-fill")
@@ -86,4 +86,6 @@ document.querySelector("form").addEventListener("click", (event) => {
         password.parentElement.classList.remove("error")
         passwordTwo.parentElement.classList.remove("error")
     }
+
+    alert("deu certo")
 })
